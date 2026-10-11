@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffdfeb">
+<title>จดหมายถึงเธอ 💌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Mali:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="pg" cx="50%" cy="85%" r="80%"><stop offset="0" stop-color="#ff7eb0"/><stop offset="1" stop-color="#ffd3e4"/></radialGradient>
+    <symbol id="fl" viewBox="0 0 100 100">
+      <g fill="url(#pg)">
+        <ellipse cx="50" cy="27" rx="15" ry="25"/>
+        <ellipse cx="50" cy="27" rx="15" ry="25" transform="rotate(72 50 50)"/>
+        <ellipse cx="50" cy="27" rx="15" ry="25" transform="rotate(144 50 50)"/>
+        <ellipse cx="50" cy="27" rx="15" ry="25" transform="rotate(216 50 50)"/>
+        <ellipse cx="50" cy="27" rx="15" ry="25" transform="rotate(288 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="10" fill="#ffe38a"/>
+    </symbol>
+  </defs>
+</svg>
+
+<canvas id="bg" aria-hidden="true"></canvas>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<button class="music" id="musicBtn" type="button" aria-pressed="false"><span class="ico">♪</span><span id="musicTxt">เปิดเพลง</span></button>
+
+<main class="stage">
+
+  <section class="scene active" id="s0">
+    <p class="hint top">มีจดหมายฉบับหนึ่งส่งมาถึง <b class="her"></b></p>
+    <button class="env" id="env" type="button" aria-label="แตะเพื่อเปิดจดหมาย">
+      <span class="peek"></span>
+      <span class="pocket"></span>
+      <span class="flap"></span>
+      <span class="seal"><svg viewBox="0 0 100 100"><use href="#fl"/></svg></span>
+    </button>
+    <p class="hint">แตะที่ซองเพื่อเปิดอ่าน</p>
+  </section>
+
+  <section class="scene" id="s1">
+    <article class="letter">
+      <svg class="corner" viewBox="0 0 100 100"><use href="#fl"/></svg>
+      <p class="to">ถึง <span class="her"></span>,</p>
+      <p class="ltxt" id="ltxt" aria-live="polite"></p>
+      <div class="row">
+        <span class="dots" id="dots"></span>
+        <button class="btn btn-main" id="nextBtn" type="button">อ่านต่อ</button>
+      </div>
+    </article>
+  </section>
+
+  <section class="scene" id="s2">
+    <div class="ask">
+      <svg class="spin" viewBox="0 0 100 100"><use href="#fl"/></svg>
+      <h2><span class="her"></span><br>เป็นแฟนกับเค้านะคะ</h2>
+      <p class="sub" id="askSub">เค้าจะดูแลเธออย่างดีที่สุดเลยค่ะ</p>
+      <div class="choices">
+        <button class="btn btn-yes" id="yesBtn" type="button">ตกลง</button>
+        <button class="btn btn-no" id="noBtn" type="button">ไม่เอา</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="s3">
+    <div class="cert">
+      <svg class="spin" viewBox="0 0 100 100"><use href="#fl"/></svg>
+      <h2 class="shine">ตอบตกลงแล้วนะ</h2>
+      <p class="cert-t">ใบรับรองการเป็นแฟน</p>
+      <p class="sub"><span id="today"></span><br><b class="her"></b> เป็นแฟนของ <b class="him"></b><br>อย่างเป็นทางการ และจะรักกันไปนาน ๆ</p>
+      <p class="sign" id="finalMsg"></p>
+      <button class="btn btn-ghost" id="againBtn" type="button">ดูอีกครั้ง</button>
+    </div>
+  </section>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
