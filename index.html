@@ -3,53 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#ffdfeb">
+<meta name="theme-color" content="#2a0e4c">
 <title>จดหมายถึงเธอ 💌</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Mali:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pattaya&family=Mali:wght@400;500;600&family=Kodchasan:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <radialGradient id="pg" cx="50%" cy="85%" r="80%"><stop offset="0" stop-color="#ff7eb0"/><stop offset="1" stop-color="#ffd3e4"/></radialGradient>
-    <symbol id="fl" viewBox="0 0 100 100">
-      <g fill="url(#pg)">
-        <ellipse cx="50" cy="27" rx="15" ry="25"/>
-        <ellipse cx="50" cy="27" rx="15" ry="25" transform="rotate(72 50 50)"/>
-        <ellipse cx="50" cy="27" rx="15" ry="25" transform="rotate(144 50 50)"/>
-        <ellipse cx="50" cy="27" rx="15" ry="25" transform="rotate(216 50 50)"/>
-        <ellipse cx="50" cy="27" rx="15" ry="25" transform="rotate(288 50 50)"/>
-      </g>
-      <circle cx="50" cy="50" r="10" fill="#ffe38a"/>
-    </symbol>
+    <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb3cc"/><stop offset=".5" stop-color="#ff5c8a"/><stop offset="1" stop-color="#c2255f"/>
+    </linearGradient>
   </defs>
+  <symbol id="dz" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <ellipse cx="50" cy="24" rx="10" ry="22"/><ellipse cx="50" cy="24" rx="10" ry="22" transform="rotate(45 50 50)"/>
+      <ellipse cx="50" cy="24" rx="10" ry="22" transform="rotate(90 50 50)"/><ellipse cx="50" cy="24" rx="10" ry="22" transform="rotate(135 50 50)"/>
+      <ellipse cx="50" cy="24" rx="10" ry="22" transform="rotate(180 50 50)"/><ellipse cx="50" cy="24" rx="10" ry="22" transform="rotate(225 50 50)"/>
+      <ellipse cx="50" cy="24" rx="10" ry="22" transform="rotate(270 50 50)"/><ellipse cx="50" cy="24" rx="10" ry="22" transform="rotate(315 50 50)"/>
+    </g>
+    <circle cx="50" cy="50" r="30" fill="#fff" opacity=".28"/>
+    <circle cx="50" cy="50" r="13" fill="#ffd45e"/><circle cx="46" cy="46" r="4" fill="#fff" opacity=".6"/>
+  </symbol>
+  <symbol id="tl" viewBox="0 0 100 100">
+    <path d="M50 94C26 90 14 68 16 34c10 9 19 7 34-14 15 21 24 23 34 14 2 34-10 56-34 60z" fill="currentColor"/>
+    <path d="M50 20c-8 22-9 46 0 72" stroke="#fff" stroke-width="3" fill="none" opacity=".4"/>
+  </symbol>
+  <symbol id="hrt" viewBox="0 0 100 100">
+    <path d="M50 90C20 66 8 48 8 32 8 18 19 9 31 9c8 0 15 4 19 11 4-7 11-11 19-11 12 0 23 9 23 23 0 16-12 34-42 58z" fill="currentColor"/>
+  </symbol>
+  <symbol id="hrt2" viewBox="0 0 100 100">
+    <path d="M50 90C20 66 8 48 8 32 8 18 19 9 31 9c8 0 15 4 19 11 4-7 11-11 19-11 12 0 23 9 23 23 0 16-12 34-42 58z" fill="url(#hg)"/>
+    <path d="M24 24c4-6 11-8 16-4" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none" opacity=".6"/>
+  </symbol>
 </svg>
 
+<!-- ท้องฟ้า: ค่ำคืน → รุ่งอรุณ (ไล่สีตามเนื้อเรื่อง) -->
+<div class="sky" aria-hidden="true">
+  <i class="dawn"></i>
+  <i class="aurora a1"></i><i class="aurora a2"></i><i class="aurora a3"></i>
+  <div class="sun"></div>
+  <i class="shoot"></i><i class="shoot s2"></i>
+</div>
 <canvas id="bg" aria-hidden="true"></canvas>
+
+<svg class="hills" viewBox="0 0 1440 300" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="hb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a2273"/><stop offset="1" stop-color="#2a0d45"/></linearGradient>
+    <linearGradient id="hf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a0e48"/><stop offset="1" stop-color="#12062a"/></linearGradient>
+  </defs>
+  <path d="M0 150C160 90 300 100 460 140S760 210 960 150 1260 70 1440 120V300H0Z" fill="url(#hb)"/>
+  <path d="M0 210C200 160 360 170 560 205S900 240 1100 190 1360 160 1440 185V300H0Z" fill="url(#hf)"/>
+</svg>
+<div id="garden" aria-hidden="true"></div>
 <canvas id="fx" aria-hidden="true"></canvas>
 
-<button class="music" id="musicBtn" type="button" aria-pressed="false"><span class="ico">♪</span><span id="musicTxt">เปิดเพลง</span></button>
+<button class="music" id="musicBtn" type="button" aria-pressed="false">
+  <span class="eq"><i></i><i></i><i></i></span><span id="musicTxt">เปิดเพลง</span>
+</button>
 
 <main class="stage">
 
   <section class="scene active" id="s0">
     <p class="hint top">มีจดหมายฉบับหนึ่งส่งมาถึง <b class="her"></b></p>
     <button class="env" id="env" type="button" aria-label="แตะเพื่อเปิดจดหมาย">
-      <span class="peek"></span>
+      <span class="halo"></span>
+      <span class="peek"><i class="pl"></i><i class="pl"></i><i class="pl s"></i></span>
       <span class="pocket"></span>
       <span class="flap"></span>
-      <span class="seal"><svg viewBox="0 0 100 100"><use href="#fl"/></svg></span>
+      <span class="seal"><svg viewBox="0 0 100 100"><use href="#hrt"/></svg></span>
     </button>
     <p class="hint">แตะที่ซองเพื่อเปิดอ่าน</p>
   </section>
 
   <section class="scene" id="s1">
     <article class="letter">
-      <svg class="corner" viewBox="0 0 100 100"><use href="#fl"/></svg>
-      <p class="to">ถึง <span class="her"></span>,</p>
+      <svg class="deco d1" viewBox="0 0 100 100"><use href="#dz"/></svg>
+      <svg class="deco d2" viewBox="0 0 100 100"><use href="#tl"/></svg>
+      <span class="tag">ถึง <span class="her"></span>,</span>
       <p class="ltxt" id="ltxt" aria-live="polite"></p>
       <div class="row">
         <span class="dots" id="dots"></span>
@@ -60,7 +94,7 @@
 
   <section class="scene" id="s2">
     <div class="ask">
-      <svg class="spin" viewBox="0 0 100 100"><use href="#fl"/></svg>
+      <div class="pulse"><svg class="beat" viewBox="0 0 100 100"><use href="#hrt2"/></svg></div>
       <h2><span class="her"></span><br>เป็นแฟนกับเค้านะคะ</h2>
       <p class="sub" id="askSub">เค้าจะดูแลเธออย่างดีที่สุดเลยค่ะ</p>
       <div class="choices">
@@ -72,7 +106,10 @@
 
   <section class="scene" id="s3">
     <div class="cert">
-      <svg class="spin" viewBox="0 0 100 100"><use href="#fl"/></svg>
+      <i class="gloss"></i>
+      <svg class="deco c1" viewBox="0 0 100 100"><use href="#dz"/></svg>
+      <svg class="deco c2" viewBox="0 0 100 100"><use href="#tl"/></svg>
+      <span class="badge"><svg viewBox="0 0 100 100"><use href="#hrt"/></svg></span>
       <h2 class="shine">ตอบตกลงแล้วนะ</h2>
       <p class="cert-t">ใบรับรองการเป็นแฟน</p>
       <p class="sub"><span id="today"></span><br><b class="her"></b> เป็นแฟนของ <b class="him"></b><br>อย่างเป็นทางการ และจะรักกันไปนาน ๆ</p>
